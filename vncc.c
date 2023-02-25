@@ -7,7 +7,7 @@
     exit(ret); \
 } while (0)
 
-void usage(char *name) {
+static void __usage(char *name) {
     printf("usage:\n%s host:port\n", name);
     exit(1);
 }
@@ -45,7 +45,7 @@ int parse_address(char *address) {
 int main(int argc, char **argv) {
 
     if (argc < 2) {
-        usage(argv[0]);
+        __usage(argv[0]);
     }
 
     char *host = argv[1];
